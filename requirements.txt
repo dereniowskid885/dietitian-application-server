@@ -1,5 +1,29 @@
--r requirements/development.txt
+# django
+django==5.0.3
+djangorestframework==3.14.0
+
+# rq
+django-rq==2.6.0
+rq-scheduler==0.11.0
+
+# project configuration
+django-split-settings==1.2.0
+
+# database
+psycopg2==2.9.5
+
+# docs
+drf-spectacular==0.24.2
+
+# server
+daphne==4.0.0
+whitenoise==6.2.0
+
+# CORS
+django-cors-headers==3.13.0
+
+# wheel
+wheel==0.38.0
+
 gunicorn
-Django>=5.0
 psycopg[binary]
-whitenoise
