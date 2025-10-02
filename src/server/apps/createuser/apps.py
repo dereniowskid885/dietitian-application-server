@@ -1,6 +1,7 @@
 import os
 from django.apps import AppConfig
-from django.conf import settings
+from django.db import connections
+from django.db.utils import OperationalError
 
 class ServerConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
@@ -10,6 +11,13 @@ class ServerConfig(AppConfig):
         django_env = os.environ.get("DJANGO_ENV", "development")
 
         if django_env == "production":
+            db_conn = connections['default']
+            try:
+                c = db_conn.cursor()
+            except OperationalError:
+                print("Baza danych nie jest jeszcze dostępna. Superuser nie zostanie utworzony.")
+                return 
+
             from django.contrib.auth.models import User
 
             username = os.environ.get("DJANGO_SUPERUSER_USERNAME")
