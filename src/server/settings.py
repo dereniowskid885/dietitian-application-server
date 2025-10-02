@@ -219,3 +219,7 @@ USE_I18N = True
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://dietitian-application-server-production.up.railway.app",
+]
