@@ -1,2 +1,4 @@
 -r requirements/development.txt
 gunicorn
+Django>=5.0
+psycopg[binary]
