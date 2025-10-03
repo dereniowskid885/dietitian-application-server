@@ -3,9 +3,9 @@ from django.apps import AppConfig
 from django.db import connections
 from django.db.utils import OperationalError
 
-class ServerConfig(AppConfig):
+class CreateUserConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "server"
+    name = "server.apps.createuser"
 
     def ready(self):
         django_env = os.environ.get("DJANGO_ENV", "development")

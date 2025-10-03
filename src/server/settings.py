@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'server.apps.opinion',
     'server.apps.order',
     'server.apps.user',
-    'server.apps.createuser'
+    'server.apps.createuser.apps.CreateUserConfig'
 ]
 
 MIDDLEWARE = [
