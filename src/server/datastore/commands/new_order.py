@@ -1,4 +1,5 @@
 from datetime import datetime
+from django.utils import timezone
 import uuid
 from server.apps.offer.models import Offer
 
@@ -84,7 +85,7 @@ class MakeNewOrderCommand(AbstractCommand):
             email=self.email,
             phone=self.phone,
             are_service_terms_accepted=self.are_service_terms_accepted,
-            date_of_order=datetime.utcnow(),
+            date_of_order=timezone.now(),
             products_with_quantity=self.products,
             sum=self.sum,
             payment_method=self.payment_method,
